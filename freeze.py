@@ -1,17 +1,7 @@
-from flask import Flask, render_template
-from cloudpayments import CloudPayments
+from flask_frozen import Freezer
+from main import app
 
-app = Flask(__name__)
+freezer = Freezer(app)
 
-
-@app.route('/')
-def index():
-    return render_template('main.html')
-
-@app.route('/buy')
-def about():
-    return render_template('index.html')
-
-
-if __name__ == "__main__":
-    app.run(debug=True)
+if __name__ == '__main__':
+    freezer.freeze()
