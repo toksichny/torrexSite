@@ -1,5 +1,15 @@
-{
-"scripts": {
-    "build-css": "static/styles/main.css"
-  }
+ {
+    "version": 2,
+    "builds": [
+        {
+            "src": "./freeze.py",
+            "use": "@netlify/python"
+        }
+    ],
+    "routes": [
+        {
+            "src": "/(.*)",
+            "dest": "/"
+        }
+    ]
 }
